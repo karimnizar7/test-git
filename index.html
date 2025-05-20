@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Git & GitHub Test Page</title>
+
+    <!-- external stylesheet -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Hello Git & GitHub 👋</h1>
+        <p>Edit → commit → push to see the magic happen.</p>
+    </header>
+
+    <main>
+        <button id="clickMe">Click me</button>
+        <p id="message"></p>
+    </main>
+
+    <footer>
+        <small>Made with ❤️ & Git</small>
+    </footer>
+
+    <script>
+        // Tiny bit of JS so you can see live changes
+        document
+            .getElementById("clickMe")
+            .addEventListener("click", () => {
+                document.getElementById("message").textContent =
+                    "You clicked the button!";
+            });
+    </script>
+</body>
+
+</html>
