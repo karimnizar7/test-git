@@ -327,20 +327,58 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Hello Git & GitHub 👋</h1>
-        <p>Edit → commit → push to see the magic happen.</p>
-    </header>
+    <div class="stadium-background"></div>
+    <div class="stadium-lights"></div>
+    <div class="floating-particles" id="particles"></div>
 
-    <main>
-        <button id="clickMe">Click me</button>
-        <p id="message">this the edited after the first commit</p>
-        <p id="message" class="test">second commit</p>
-    </main>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">KARL-HEINZ RUMMENIGGE</h1>
+            <p class="subtitle">Der Kaiser der Offensive</p>
+        </div>
 
-    <footer>
-        <small>Made with ❤️ & Git</small>
-    </footer>
+        <div class="player-section">
+            <div class="player-container" id="playerContainer">
+                <div class="player-image" id="playerImage">
+                    <div class="player-number">11</div>
+                    <div style="margin-top: 50px;">
+                        <strong>RUMMENIGGE</strong><br>
+                        🏆 Bayern München Legend<br>
+                        ⚽ Goal Machine<br>
+                        🇩🇪 Germany Captain<br>
+                        💫 Ballon d'Or Winner
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="play-button" id="playButton">PLAY ANIMATION</button>
+            <button class="change-button" id="changeButton">TRANSFORM</button>
+        </div>
+
+        <div class="stats-panel">
+            <h2 class="stats-title">Career Highlights</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">95</div>
+                    <div class="stat-label">Germany Caps</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">International Goals</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Ballon d'Or</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Bundesliga Titles</div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Create floating particles
