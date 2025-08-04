@@ -4,94 +4,590 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Git Cheat Sheet</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Karl-Heinz Rummenigge - Legend</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #0a4d3a 0%, #1a5f47 50%, #2a7052 100%);
+            min-height: 100vh;
+        }
+
+        .stadium-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
+                linear-gradient(0deg, #0d4b35 0%, #1a5f47 40%, #87ceeb 100%);
+            z-index: -2;
+        }
+
+        .stadium-lights {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 30%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 30%),
+                radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.2) 0%, transparent 40%);
+            z-index: -1;
+            animation: flicker 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes flicker {
+
+            0%,
+            100% {
+                opacity: 0.8;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            padding: 20px;
+            position: relative;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .title {
+            font-size: 3.5rem;
+            font-weight: bold;
+            color: #fff;
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6bcf7f);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 3s ease-in-out infinite;
+        }
+
+        @keyframes gradientShift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            color: #e0e0e0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .player-section {
+            position: relative;
+            margin: 40px 0;
+        }
+
+        .player-container {
+            position: relative;
+            width: 300px;
+            height: 400px;
+            margin: 0 auto;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+
+        .player-container:hover {
+            transform: scale(1.05);
+        }
+
+        .player-image {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #dc143c 0%, #b91c3c 100%);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            color: white;
+            text-align: center;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            border: 3px solid #ffd700;
+            position: relative;
+            overflow: hidden;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                box-shadow: 0 15px 35px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 20px 40px rgba(255, 215, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.4);
+            }
+        }
+
+        .player-image::before {
+            content: '⚽';
+            position: absolute;
+            font-size: 3rem;
+            top: 20px;
+            right: 20px;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        .player-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            animation: shine 3s ease-in-out infinite;
+        }
+
+        @keyframes shine {
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
+        }
+
+        .player-number {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            font-size: 4rem;
+            font-weight: bold;
+            color: #ffd700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+        }
+
+        .controls {
+            margin-top: 30px;
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .play-button {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(238, 90, 36, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .play-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(238, 90, 36, 0.4);
+        }
+
+        .play-button:active {
+            transform: translateY(0);
+        }
+
+        .play-button::before {
+            content: '▶️';
+            margin-right: 10px;
+        }
+
+        .change-button {
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            font-weight: bold;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 25px rgba(9, 132, 227, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .change-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(9, 132, 227, 0.4);
+        }
+
+        .change-button::before {
+            content: '🔄';
+            margin-right: 10px;
+        }
+
+        .stats-panel {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 25px;
+            margin-top: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 600px;
+            text-align: center;
+        }
+
+        .stats-title {
+            font-size: 1.8rem;
+            color: #ffd700;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .stat-item {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            color: #ff6b6b;
+        }
+
+        .stat-label {
+            color: #e0e0e0;
+            font-size: 0.9rem;
+            margin-top: 5px;
+        }
+
+        .floating-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: #ffd700;
+            border-radius: 50%;
+            animation: float 8s ease-in-out infinite;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-10vh) translateX(50px);
+                opacity: 0;
+            }
+        }
+
+        .animated {
+            animation: celebration 1s ease-out;
+        }
+
+        @keyframes celebration {
+            0% {
+                transform: scale(1) rotate(0deg);
+            }
+
+            25% {
+                transform: scale(1.1) rotate(-5deg);
+            }
+
+            50% {
+                transform: scale(1.2) rotate(5deg);
+            }
+
+            75% {
+                transform: scale(1.1) rotate(-2deg);
+            }
+
+            100% {
+                transform: scale(1) rotate(0deg);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .player-container {
+                width: 250px;
+                height: 320px;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <header>
-        <h1>Git Cheat Sheet</h1>
-        <p>Your quick reference guide to Git commands</p>
-    </header>
+    <div class="stadium-background"></div>
+    <div class="stadium-lights"></div>
+    <div class="floating-particles" id="particles"></div>
 
-    <nav>
-        <ul>
-            <li><a href="#basic-commands">Basic Commands</a></li>
-            <li><a href="#branching">Branching</a></li>
-            <li><a href="#merging">Merging</a></li>
-            <li><a href="#remote-repository">Remote Repository</a></li>
-        </ul>
-    </nav>
+    <div class="container">
+        <div class="header">
+            <h1 class="title">KARL-HEINZ RUMMENIGGE W BNIATO</h1>
+            <p class="subtitle">Der Kaiser der Offensive</p>
+        </div>
 
-    <main>
-        <section id="basic-commands">
-            <h2>Basic Commands</h2>
-            <div class="command">
-                <h3>git init</h3>
-                <p>Initialize a new Git repository.</p>
+        <div class="player-section">
+            <div class="player-container" id="playerContainer">
+                <div class="player-image" id="playerImage">
+                    <div class="player-number">11</div>
+                    <div style="margin-top: 50px;">
+                        <strong>piliiiiiiiiiiiiii</strong><br>
+                        🏆 Bayern München Legend<br>
+                        ⚽ Goal Machine<br>
+                        🇩🇪 Germany Captain<br>
+                        💫 Ballon d'Or Winner
+                    </div>
+                </div>
             </div>
-            <div class="command">
-                <h3>git clone &lt;repository&gt;</h3>
-                <p>Clone a repository into a new directory.</p>
-            </div>
-            <div class="command">
-                <h3>git status</h3>
-                <p>Show the working tree status.</p>
-            </div>
-            <div class="command">
-                <h3>git add &lt;file&gt;</h3>
-                <p>Add file contents to the index (staging area).</p>
-            </div>
-            <div class="command">
-                <h3>git commit -m "message"</h3>
-                <p>Record changes to the repository with a message.</p>
-            </div>
-        </section>
+        </div>
 
-        <section id="branching">
-            <h2>Branching</h2>
-            <div class="command">
-                <h3>git branch</h3>
-                <p>List, create, or delete branches.</p>
-            </div>
-            <div class="command">
-                <h3>git checkout &lt;branch&gt;</h3>
-                <p>Switch to a specified branch.</p>
-            </div>
-            <div class="command">
-                <h3>git branch &lt;branch-name&gt;</h3>
-                <p>Create a new branch.</p>
-            </div>
-        </section>
+        <div class="controls">
+            <button class="play-button" id="playButton">PLAY ANIMATION</button>
+            <button class="change-button" id="changeButton">TRANSFORM</button>
+        </div>
 
-        <section id="merging">
-            <h2>Merging</h2>
-            <div class="command">
-                <h3>git merge &lt;branch&gt;</h3>
-                <p>Merge a specified branch into the current branch.</p>
+        <div class="stats-panel">
+            <h2 class="stats-title">Career Highlights</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">95</div>
+                    <div class="stat-label">Germany Caps</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">45</div>
+                    <div class="stat-label">International Goals</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Ballon d'Or</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Bundesliga Titles</div>
+                </div>
             </div>
-        </section>
+        </div>
+    </div>
 
-        <section id="remote-repository">
-            <h2>Remote Repository</h2>
-            <div class="command">
-                <h3>git remote add &lt;name&gt; &lt;url&gt;</h3>
-                <p>Add a remote repository.</p>
-            </div>
-            <div class="command">
-                <h3>git push &lt;remote&gt; &lt;branch&gt;</h3>
-                <p>Push changes to a remote repository.</p>
-            </div>
-            <div class="command">
-                <h3>git pull &lt;remote&gt; &lt;branch&gt;</h3>
-                <p>Fetch and merge changes from a remote repository.</p>
-            </div>
-        </section>
-    </main>
+    <script>
+        // Create floating particles
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            for (let i = 0; i < 50; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 8 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 6) + 's';
+                particlesContainer.appendChild(particle);
+            }
+        }
 
-    <footer>
-        <p>&copy; 2023 Git Cheat Sheet</p>
-    </footer>
+        // Initialize particles
+        createParticles();
+
+        // Player transformations
+        const transformations = [
+            {
+                number: '11',
+                content: `<strong>RUMMENIGGE</strong><br>🏆 Bayern München Legend<br>⚽ Goal Machine<br>🇩🇪 Germany Captain<br>💫 Ballon d'Or Winner`,
+                color: 'linear-gradient(135deg, #dc143c 0%, #b91c3c 100%)'
+            },
+            {
+                number: '10',
+                content: `<strong>DER BOMBER</strong><br>🎯 Precision Striker<br>⚡ Lightning Fast<br>🎪 Technical Genius<br>👑 The King`,
+                color: 'linear-gradient(135deg, #ffd700 0%, #ffb347 100%)'
+            },
+            {
+                number: '7',
+                content: `<strong>EXECUTIVE</strong><br>💼 Bayern Chairman<br>📈 Business Mastermind<br>🌟 Club Legend<br>🏛️ Football Icon`,
+                color: 'linear-gradient(135deg, #4a90e2 0%, #357abd 100%)'
+            }
+        ];
+
+        let currentTransformation = 0;
+
+        // Button event listeners
+        document.getElementById('playButton').addEventListener('click', function () {
+            const playerContainer = document.getElementById('playerContainer');
+            playerContainer.classList.add('animated');
+
+            // Create celebration effect
+            createCelebrationEffect();
+
+            setTimeout(() => {
+                playerContainer.classList.remove('animated');
+            }, 1000);
+        });
+
+        document.getElementById('changeButton').addEventListener('click', function () {
+            currentTransformation = (currentTransformation + 1) % transformations.length;
+            const transformation = transformations[currentTransformation];
+
+            const playerImage = document.getElementById('playerImage');
+            const playerNumber = playerImage.querySelector('.player-number');
+
+            // Smooth transition
+            playerImage.style.opacity = '0';
+            playerImage.style.transform = 'scale(0.8)';
+
+            setTimeout(() => {
+                playerNumber.textContent = transformation.number;
+                playerImage.innerHTML = `
+                    <div class="player-number">${transformation.number}</div>
+                    <div style="margin-top: 50px;">${transformation.content}</div>
+                `;
+                playerImage.style.background = transformation.color;
+                playerImage.style.opacity = '1';
+                playerImage.style.transform = 'scale(1)';
+            }, 300);
+        });
+
+        // Celebration effect
+        function createCelebrationEffect() {
+            const colors = ['#ffd700', '#ff6b6b', '#74b9ff', '#00b894', '#fd79a8'];
+
+            for (let i = 0; i < 30; i++) {
+                setTimeout(() => {
+                    const confetti = document.createElement('div');
+                    confetti.style.position = 'fixed';
+                    confetti.style.left = Math.random() * 100 + '%';
+                    confetti.style.top = '-10px';
+                    confetti.style.width = '10px';
+                    confetti.style.height = '10px';
+                    confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                    confetti.style.borderRadius = '50%';
+                    confetti.style.pointerEvents = 'none';
+                    confetti.style.zIndex = '1000';
+                    confetti.style.animation = 'fall 3s ease-in forwards';
+
+                    document.body.appendChild(confetti);
+
+                    setTimeout(() => {
+                        confetti.remove();
+                    }, 3000);
+                }, i * 50);
+            }
+        }
+
+        // Add fall animation for confetti
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes fall {
+                to {
+                    transform: translateY(100vh) rotate(720deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add click interaction to player
+        document.getElementById('playerContainer').addEventListener('click', function () {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1.05)';
+            }, 100);
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+            }, 200);
+        });
+    </script>
 </body>
 
 </html>
