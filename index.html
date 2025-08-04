@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gabriel Omari Batistuta - The Legend</title>
+    <title>Gabriel Omar Batistuta - The Legend</title>
     <style>
         * {
             margin: 0;
@@ -15,9 +15,8 @@
         body {
             font-family: 'Arial', sans-serif;
             overflow-x: hidden;
-            background: linear-gradient(135deg, #0a1e3a 0%, #1a2e4a 50%, #2a3e5a 100%);
+            background: linear-gradient(135deg, #0a4d3a 0%, #1a5f47 50%, #2a7052 100%);
             min-height: 100vh;
-            color: white;
         }
 
         .stadium-background {
@@ -28,7 +27,7 @@
             height: 100%;
             background:
                 radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
-                linear-gradient(0deg, #0d1e35 0%, #1a2e47 40%, #3a4e6b 100%);
+                linear-gradient(0deg, #0d4b35 0%, #1a5f47 40%, #87ceeb 100%);
             z-index: -2;
         }
 
@@ -39,9 +38,9 @@
             width: 100%;
             height: 100%;
             background:
-                radial-gradient(circle at 20% 20%, rgba(255, 215, 0, 0.2) 0%, transparent 30%),
-                radial-gradient(circle at 80% 20%, rgba(255, 215, 0, 0.2) 0%, transparent 30%),
-                radial-gradient(circle at 50% 10%, rgba(255, 215, 0, 0.15) 0%, transparent 40%);
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 30%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 30%),
+                radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.2) 0%, transparent 40%);
             z-index: -1;
             animation: flicker 4s ease-in-out infinite alternate;
         }
@@ -92,7 +91,7 @@
             color: #fff;
             text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
             margin-bottom: 10px;
-            background: linear-gradient(45deg, #ff8c00, #ffd700, #e6e6e6);
+            background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6bcf7f);
             background-size: 300% 300%;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -130,7 +129,6 @@
             margin: 0 auto;
             cursor: pointer;
             transition: transform 0.3s ease;
-            perspective: 1000px;
         }
 
         .player-container:hover {
@@ -140,7 +138,7 @@
         .player-image {
             width: 100%;
             height: 100%;
-            background: linear-gradient(135deg, #1a3e8c 0%, #0a2e7c 100%);
+            background: linear-gradient(135deg, #dc143c 0%, #b91c3c 100%);
             border-radius: 20px;
             display: flex;
             align-items: center;
@@ -153,26 +151,6 @@
             position: relative;
             overflow: hidden;
             animation: pulse 2s ease-in-out infinite;
-            transform-style: preserve-3d;
-        }
-
-        .player-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            position: absolute;
-            top: 0;
-            left: 0;
-            z-index: 1;
-        }
-
-        .player-content {
-            position: relative;
-            z-index: 2;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 15px;
-            width: 90%;
         }
 
         @keyframes pulse {
@@ -194,7 +172,6 @@
             top: 20px;
             right: 20px;
             animation: bounce 2s ease-in-out infinite;
-            z-index: 3;
         }
 
         @keyframes bounce {
@@ -218,7 +195,6 @@
             height: 100%;
             background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             animation: shine 3s ease-in-out infinite;
-            z-index: 2;
         }
 
         @keyframes shine {
@@ -239,7 +215,6 @@
             font-weight: bold;
             color: #ffd700;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
-            z-index: 3;
         }
 
         .controls {
@@ -251,7 +226,7 @@
         }
 
         .play-button {
-            background: linear-gradient(135deg, #ff8c00 0%, #ff6b00 100%);
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
             color: white;
             border: none;
             padding: 15px 30px;
@@ -259,7 +234,7 @@
             font-weight: bold;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 8px 25px rgba(255, 140, 0, 0.3);
+            box-shadow: 0 8px 25px rgba(238, 90, 36, 0.3);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -267,7 +242,7 @@
 
         .play-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(255, 140, 0, 0.4);
+            box-shadow: 0 12px 35px rgba(238, 90, 36, 0.4);
         }
 
         .play-button:active {
@@ -280,7 +255,7 @@
         }
 
         .change-button {
-            background: linear-gradient(135deg, #00b894 0%, #008c6a 100%);
+            background: linear-gradient(135deg, #74b9ff 0%, #0984e3 100%);
             color: white;
             border: none;
             padding: 15px 30px;
@@ -288,13 +263,13 @@
             font-weight: bold;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 8px 25px rgba(0, 184, 148, 0.3);
+            box-shadow: 0 8px 25px rgba(9, 132, 227, 0.3);
             transition: all 0.3s ease;
         }
 
         .change-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(0, 184, 148, 0.4);
+            box-shadow: 0 12px 35px rgba(9, 132, 227, 0.4);
         }
 
         .change-button::before {
@@ -311,7 +286,6 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
             max-width: 600px;
             text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
 
         .stats-title {
@@ -319,8 +293,6 @@
             color: #ffd700;
             margin-bottom: 15px;
             font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
         }
 
         .stats-grid {
@@ -331,23 +303,16 @@
         }
 
         .stat-item {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(255, 255, 255, 0.1);
             padding: 15px;
             border-radius: 10px;
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            transition: transform 0.3s ease;
-        }
-
-        .stat-item:hover {
-            transform: translateY(-5px);
-            background: rgba(0, 0, 0, 0.4);
-            border-color: rgba(255, 215, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .stat-number {
             font-size: 2rem;
             font-weight: bold;
-            color: #ff8c00;
+            color: #ff6b6b;
         }
 
         .stat-label {
@@ -423,47 +388,6 @@
             }
         }
 
-        .trophy-wall {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-            margin-top: 20px;
-            flex-wrap: wrap;
-        }
-
-        .trophy {
-            font-size: 2rem;
-            animation: floatTrophy 3s ease-in-out infinite;
-        }
-
-        @keyframes floatTrophy {
-
-            0%,
-            100% {
-                transform: translateY(0);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-        }
-
-        .quote {
-            font-style: italic;
-            margin-top: 20px;
-            color: #ffd700;
-            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
-            position: relative;
-            padding: 0 20px;
-        }
-
-        .quote::before,
-        .quote::after {
-            content: '"';
-            font-size: 1.5rem;
-            color: #ff8c00;
-        }
-
         @media (max-width: 768px) {
             .title {
                 font-size: 2.5rem;
@@ -475,16 +399,12 @@
 
             .player-container {
                 width: 250px;
-                height: 350px;
+                height: 320px;
             }
 
             .controls {
                 flex-direction: column;
                 align-items: center;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr 1fr;
             }
         }
     </style>
@@ -497,28 +417,27 @@
 
     <div class="container">
         <div class="header">
-            <h1 class="title">GABRIEL OMAR BATISTUTA</h1>
-            <p class="subtitle">"Batigol" - The Argentine Goal Machine</p>
+            <h1 class="title">KARL-HEINZ RUMMENIGGE W BNIATO</h1>
+            <p class="subtitle">Der Kaiser der Offensive</p>
         </div>
 
         <div class="player-section">
             <div class="player-container" id="playerContainer">
                 <div class="player-image" id="playerImage">
-                    <img src="https://i.imgur.com/JQZq5Qq.jpg" alt="Gabriel Batistuta" id="batistutaImg">
-                    <div class="player-content">
-                        <div class="player-number">9</div>
-                        <strong>BATISTUTA</strong><br>
-                        ⚽ Goal Scoring Legend<br>
-                        🇦🇷 Argentina's Finest<br>
-                        💥 Powerful Striker<br>
-                        🏆 Fiorentina Icon
+                    <div class="player-number">11</div>
+                    <div style="margin-top: 50px;">
+                        <strong>piliiiiiiiiiiiiii</strong><br>
+                        🏆 Bayern München Legend<br>
+                        ⚽ Goal Machine<br>
+                        🇩🇪 Germany Captain<br>
+                        💫 Ballon d'Or Winner
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="controls">
-            <button class="play-button" id="playButton">CELEBRATION</button>
+            <button class="play-button" id="playButton">PLAY ANIMATION</button>
             <button class="change-button" id="changeButton">TRANSFORM</button>
         </div>
 
@@ -526,31 +445,22 @@
             <h2 class="stats-title">Career Highlights</h2>
             <div class="stats-grid">
                 <div class="stat-item">
-                    <div class="stat-number">56</div>
-                    <div class="stat-label">Argentina Caps</div>
+                    <div class="stat-number">95</div>
+                    <div class="stat-label">Germany Caps</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">54</div>
+                    <div class="stat-number">45</div>
                     <div class="stat-label">International Goals</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">184</div>
-                    <div class="stat-label">Serie A Goals</div>
+                    <div class="stat-number">2</div>
+                    <div class="stat-label">Ballon d'Or</div>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">10</div>
-                    <div class="stat-label">World Cup Goals</div>
+                    <div class="stat-number">4</div>
+                    <div class="stat-label">Bundesliga Titles</div>
                 </div>
             </div>
-
-            <div class="trophy-wall">
-                <div class="trophy" style="animation-delay: 0s;">🏆</div>
-                <div class="trophy" style="animation-delay: 0.5s;">🥇</div>
-                <div class="trophy" style="animation-delay: 1s;">⚽</div>
-                <div class="trophy" style="animation-delay: 1.5s;">👑</div>
-            </div>
-
-            <p class="quote">When I shoot, I shoot to kill. Either the ball goes in or it breaks the net.</p>
         </div>
     </div>
 
@@ -571,25 +481,22 @@
         // Initialize particles
         createParticles();
 
-        // Player transformations with different Batistuta images
+        // Player transformations
         const transformations = [
             {
-                number: '9',
-                content: `<strong>BATISTUTA</strong><br>⚽ Goal Scoring Legend<br>🇦🇷 Argentina's Finest<br>💥 Powerful Striker<br>🏆 Fiorentina Icon`,
-                image: 'https://i.imgur.com/JQZq5Qq.jpg',
-                color: 'linear-gradient(135deg, #1a3e8c 0%, #0a2e7c 100%)'
+                number: '11',
+                content: `<strong>RUMMENIGGE</strong><br>🏆 Bayern München Legend<br>⚽ Goal Machine<br>🇩🇪 Germany Captain<br>💫 Ballon d'Or Winner`,
+                color: 'linear-gradient(135deg, #dc143c 0%, #b91c3c 100%)'
             },
             {
-                number: '18',
-                content: `<strong>BATIGOL</strong><br>🎯 Clinical Finisher<br>⚡ Deadly Accuracy<br>🔥 Fiorentina Hero<br>👑 King of Florence`,
-                image: 'https://i.imgur.com/VxLQYzJ.jpg',
-                color: 'linear-gradient(135deg, #8b0000 0%, #6b0000 100%)'
+                number: '10',
+                content: `<strong>DER BOMBER</strong><br>🎯 Precision Striker<br>⚡ Lightning Fast<br>🎪 Technical Genius<br>👑 The King`,
+                color: 'linear-gradient(135deg, #ffd700 0%, #ffb347 100%)'
             },
             {
-                number: '20',
-                content: `<strong>EL ANGEL</strong><br>🇦🇷 Argentina Legend<br>🌍 World Cup Star<br>💫 Roma Champion<br>🏅 Football Immortal`,
-                image: 'https://i.imgur.com/5tKvW9U.jpg',
-                color: 'linear-gradient(135deg, #ff8c00 0%, #cc7000 100%)'
+                number: '7',
+                content: `<strong>EXECUTIVE</strong><br>💼 Bayern Chairman<br>📈 Business Mastermind<br>🌟 Club Legend<br>🏛️ Football Icon`,
+                color: 'linear-gradient(135deg, #4a90e2 0%, #357abd 100%)'
             }
         ];
 
@@ -603,26 +510,9 @@
             // Create celebration effect
             createCelebrationEffect();
 
-            // Change to celebration image temporarily
-            const playerImage = document.getElementById('playerImage');
-            const originalContent = playerImage.innerHTML;
-            
-            playerImage.innerHTML = `
-                <img src="https://i.imgur.com/8nLx0jK.jpg" alt="Batistuta celebrating" style="filter: brightness(1.1);">
-                <div class="player-content" style="background: rgba(255, 140, 0, 0.8);">
-                    <div class="player-number">GOAL!</div>
-                    <strong>BATIGOL!!!</strong><br>
-                    🎉 Celebrating Another Goal<br>
-                    🔥 Unstoppable Force<br>
-                    ⚽ The Net is Torn Again<br>
-                    🏆 Legend in Action
-                </div>
-            `;
-
             setTimeout(() => {
                 playerContainer.classList.remove('animated');
-                playerImage.innerHTML = originalContent;
-            }, 2000);
+            }, 1000);
         });
 
         document.getElementById('changeButton').addEventListener('click', function () {
@@ -630,54 +520,41 @@
             const transformation = transformations[currentTransformation];
 
             const playerImage = document.getElementById('playerImage');
-            const batistutaImg = document.getElementById('batistutaImg');
+            const playerNumber = playerImage.querySelector('.player-number');
 
             // Smooth transition
             playerImage.style.opacity = '0';
-            playerImage.style.transform = 'scale(0.8) rotateY(90deg)';
+            playerImage.style.transform = 'scale(0.8)';
 
             setTimeout(() => {
-                batistutaImg.src = transformation.image;
-                playerImage.style.background = transformation.color;
+                playerNumber.textContent = transformation.number;
                 playerImage.innerHTML = `
-                    <img src="${transformation.image}" alt="Gabriel Batistuta">
-                    <div class="player-content">
-                        <div class="player-number">${transformation.number}</div>
-                        ${transformation.content}
-                    </div>
+                    <div class="player-number">${transformation.number}</div>
+                    <div style="margin-top: 50px;">${transformation.content}</div>
                 `;
+                playerImage.style.background = transformation.color;
                 playerImage.style.opacity = '1';
-                playerImage.style.transform = 'scale(1) rotateY(0deg)';
+                playerImage.style.transform = 'scale(1)';
             }, 300);
         });
 
         // Celebration effect
         function createCelebrationEffect() {
-            const colors = ['#ffd700', '#ff8c00', '#00b894', '#e84393', '#0984e3'];
+            const colors = ['#ffd700', '#ff6b6b', '#74b9ff', '#00b894', '#fd79a8'];
 
-            for (let i = 0; i < 50; i++) {
+            for (let i = 0; i < 30; i++) {
                 setTimeout(() => {
                     const confetti = document.createElement('div');
                     confetti.style.position = 'fixed';
                     confetti.style.left = Math.random() * 100 + '%';
                     confetti.style.top = '-10px';
-                    confetti.style.width = (Math.random() * 10 + 5) + 'px';
-                    confetti.style.height = (Math.random() * 10 + 5) + 'px';
+                    confetti.style.width = '10px';
+                    confetti.style.height = '10px';
                     confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
-                    confetti.style.borderRadius = Math.random() > 0.5 ? '50%' : '0';
+                    confetti.style.borderRadius = '50%';
                     confetti.style.pointerEvents = 'none';
                     confetti.style.zIndex = '1000';
-                    confetti.style.animation = `fall ${Math.random() * 2 + 2}s ease-in forwards`;
-                    confetti.style.transform = `rotate(${Math.random() * 360}deg)`;
-
-                    // Random shape - sometimes use football emoji
-                    if (Math.random() > 0.7) {
-                        confetti.style.fontSize = '20px';
-                        confetti.style.width = 'auto';
-                        confetti.style.height = 'auto';
-                        confetti.style.backgroundColor = 'transparent';
-                        confetti.textContent = '⚽';
-                    }
+                    confetti.style.animation = 'fall 3s ease-in forwards';
 
                     document.body.appendChild(confetti);
 
@@ -685,15 +562,6 @@
                         confetti.remove();
                     }, 3000);
                 }, i * 50);
-            }
-
-            // Add sound effect (browser may block this without user interaction)
-            try {
-                const audio = new Audio('https://www.soundjay.com/misc/sounds/crowd-cheer-01.mp3');
-                audio.volume = 0.3;
-                audio.play().catch(e => console.log("Audio playback prevented:", e));
-            } catch (e) {
-                console.log("Audio error:", e);
             }
         }
 
@@ -718,70 +586,6 @@
             setTimeout(() => {
                 this.style.transform = 'scale(1)';
             }, 200);
-            
-            // Small celebration on click
-            createMiniCelebration(this.getBoundingClientRect().left + 150, this.getBoundingClientRect().top + 200);
-        });
-
-        function createMiniCelebration(x, y) {
-            for (let i = 0; i < 10; i++) {
-                setTimeout(() => {
-                    const star = document.createElement('div');
-                    star.style.position = 'fixed';
-                    star.style.left = x + 'px';
-                    star.style.top = y + 'px';
-                    star.style.width = '10px';
-                    star.style.height = '10px';
-                    star.style.backgroundColor = '#ffd700';
-                    star.style.borderRadius = '50%';
-                    star.style.pointerEvents = 'none';
-                    star.style.zIndex = '1000';
-                    star.style.animation = `miniCelebration ${Math.random() * 0.5 + 0.5}s ease-out forwards`;
-                    
-                    document.body.appendChild(star);
-                    
-                    setTimeout(() => {
-                        star.remove();
-                    }, 1000);
-                }, i * 50);
-            }
-        }
-
-        // Add mini celebration animation
-        const miniStyle = document.createElement('style');
-        miniStyle.textContent = `
-            @keyframes miniCelebration {
-                0% {
-                    transform: translate(0, 0) scale(1);
-                    opacity: 1;
-                }
-                100% {
-                    transform: translate(${Math.random() > 0.5 ? '-' : ''}${Math.random() * 100 + 50}px, -${Math.random() * 100 + 50}px) scale(0);
-                    opacity: 0;
-                }
-            }
-        `;
-        document.head.appendChild(miniStyle);
-
-        // Rotate player card on mouse move
-        document.addEventListener('mousemove', function(e) {
-            const playerContainer = document.getElementById('playerContainer');
-            const rect = playerContainer.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            
-            const angleX = (y - centerY) / 20;
-            const angleY = (centerX - x) / 20;
-            
-            playerContainer.style.transform = `perspective(1000px) rotateX(${angleX}deg) rotateY(${angleY}deg)`;
-        });
-
-        // Reset rotation when mouse leaves
-        document.getElementById('playerContainer').addEventListener('mouseleave', function() {
-            this.style.transform = 'perspective(1000px) rotateX(0) rotateY(0)';
         });
     </script>
 </body>
