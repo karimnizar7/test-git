@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,8 +25,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
-                radial-gradient(ellipse at center, rgba(255,255,255,0.1) 0%, transparent 50%),
+            background:
+                radial-gradient(ellipse at center, rgba(255, 255, 255, 0.1) 0%, transparent 50%),
                 linear-gradient(0deg, #0d4b35 0%, #1a5f47 40%, #87ceeb 100%);
             z-index: -2;
         }
@@ -36,17 +37,24 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: 
-                radial-gradient(circle at 20% 20%, rgba(255,255,255,0.3) 0%, transparent 30%),
-                radial-gradient(circle at 80% 20%, rgba(255,255,255,0.3) 0%, transparent 30%),
-                radial-gradient(circle at 50% 10%, rgba(255,255,255,0.2) 0%, transparent 40%);
+            background:
+                radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 30%),
+                radial-gradient(circle at 80% 20%, rgba(255, 255, 255, 0.3) 0%, transparent 30%),
+                radial-gradient(circle at 50% 10%, rgba(255, 255, 255, 0.2) 0%, transparent 40%);
             z-index: -1;
             animation: flicker 4s ease-in-out infinite alternate;
         }
 
         @keyframes flicker {
-            0%, 100% { opacity: 0.8; }
-            50% { opacity: 1; }
+
+            0%,
+            100% {
+                opacity: 0.8;
+            }
+
+            50% {
+                opacity: 1;
+            }
         }
 
         .container {
@@ -66,15 +74,22 @@
         }
 
         @keyframes slideDown {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
+            from {
+                transform: translateY(-50px);
+                opacity: 0;
+            }
+
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
         }
 
         .title {
             font-size: 3.5rem;
             font-weight: bold;
             color: #fff;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.7);
             margin-bottom: 10px;
             background: linear-gradient(45deg, #ff6b6b, #ffd93d, #6bcf7f);
             background-size: 300% 300%;
@@ -85,14 +100,21 @@
         }
 
         @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
         }
 
         .subtitle {
             font-size: 1.5rem;
             color: #e0e0e0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
 
         .player-section {
@@ -124,7 +146,7 @@
             font-size: 1.2rem;
             color: white;
             text-align: center;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
             border: 3px solid #ffd700;
             position: relative;
             overflow: hidden;
@@ -132,8 +154,15 @@
         }
 
         @keyframes pulse {
-            0%, 100% { box-shadow: 0 15px 35px rgba(255,215,0,0.3), 0 0 20px rgba(255,215,0,0.2); }
-            50% { box-shadow: 0 20px 40px rgba(255,215,0,0.5), 0 0 30px rgba(255,215,0,0.4); }
+
+            0%,
+            100% {
+                box-shadow: 0 15px 35px rgba(255, 215, 0, 0.3), 0 0 20px rgba(255, 215, 0, 0.2);
+            }
+
+            50% {
+                box-shadow: 0 20px 40px rgba(255, 215, 0, 0.5), 0 0 30px rgba(255, 215, 0, 0.4);
+            }
         }
 
         .player-image::before {
@@ -146,8 +175,15 @@
         }
 
         @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
+
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-10px);
+            }
         }
 
         .player-image::after {
@@ -157,13 +193,18 @@
             left: -100%;
             width: 100%;
             height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
             animation: shine 3s ease-in-out infinite;
         }
 
         @keyframes shine {
-            0% { left: -100%; }
-            100% { left: 100%; }
+            0% {
+                left: -100%;
+            }
+
+            100% {
+                left: 100%;
+            }
         }
 
         .player-number {
@@ -173,7 +214,7 @@
             font-size: 4rem;
             font-weight: bold;
             color: #ffd700;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
         }
 
         .controls {
@@ -193,7 +234,7 @@
             font-weight: bold;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 8px 25px rgba(238,90,36,0.3);
+            box-shadow: 0 8px 25px rgba(238, 90, 36, 0.3);
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
@@ -201,7 +242,7 @@
 
         .play-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(238,90,36,0.4);
+            box-shadow: 0 12px 35px rgba(238, 90, 36, 0.4);
         }
 
         .play-button:active {
@@ -222,13 +263,13 @@
             font-weight: bold;
             border-radius: 50px;
             cursor: pointer;
-            box-shadow: 0 8px 25px rgba(9,132,227,0.3);
+            box-shadow: 0 8px 25px rgba(9, 132, 227, 0.3);
             transition: all 0.3s ease;
         }
 
         .change-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 12px 35px rgba(9,132,227,0.4);
+            box-shadow: 0 12px 35px rgba(9, 132, 227, 0.4);
         }
 
         .change-button::before {
@@ -237,12 +278,12 @@
         }
 
         .stats-panel {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 20px;
             padding: 25px;
             margin-top: 30px;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
             max-width: 600px;
             text-align: center;
         }
@@ -262,10 +303,10 @@
         }
 
         .stat-item {
-            background: rgba(255,255,255,0.1);
+            background: rgba(255, 255, 255, 0.1);
             padding: 15px;
             border-radius: 10px;
-            border: 1px solid rgba(255,255,255,0.2);
+            border: 1px solid rgba(255, 255, 255, 0.2);
         }
 
         .stat-number {
@@ -300,10 +341,25 @@
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(100vh) translateX(0); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-10vh) translateX(50px); opacity: 0; }
+
+            0%,
+            100% {
+                transform: translateY(100vh) translateX(0);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-10vh) translateX(50px);
+                opacity: 0;
+            }
         }
 
         .animated {
@@ -311,21 +367,49 @@
         }
 
         @keyframes celebration {
-            0% { transform: scale(1) rotate(0deg); }
-            25% { transform: scale(1.1) rotate(-5deg); }
-            50% { transform: scale(1.2) rotate(5deg); }
-            75% { transform: scale(1.1) rotate(-2deg); }
-            100% { transform: scale(1) rotate(0deg); }
+            0% {
+                transform: scale(1) rotate(0deg);
+            }
+
+            25% {
+                transform: scale(1.1) rotate(-5deg);
+            }
+
+            50% {
+                transform: scale(1.2) rotate(5deg);
+            }
+
+            75% {
+                transform: scale(1.1) rotate(-2deg);
+            }
+
+            100% {
+                transform: scale(1) rotate(0deg);
+            }
         }
 
         @media (max-width: 768px) {
-            .title { font-size: 2.5rem; }
-            .subtitle { font-size: 1.2rem; }
-            .player-container { width: 250px; height: 320px; }
-            .controls { flex-direction: column; align-items: center; }
+            .title {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1.2rem;
+            }
+
+            .player-container {
+                width: 250px;
+                height: 320px;
+            }
+
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
         }
     </style>
 </head>
+
 <body>
     <div class="stadium-background"></div>
     <div class="stadium-lights"></div>
@@ -333,7 +417,7 @@
 
     <div class="container">
         <div class="header">
-            <h1 class="title">KARL-HEINZ RUMMENIGGE</h1>
+            <h1 class="title">KARL-HEINZ RUMMENIGGE W BNIATO</h1>
             <p class="subtitle">Der Kaiser der Offensive</p>
         </div>
 
@@ -342,7 +426,7 @@
                 <div class="player-image" id="playerImage">
                     <div class="player-number">11</div>
                     <div style="margin-top: 50px;">
-                        <strong>RUMMENIGGE</strong><br>
+                        <strong>piliiiiiiiiiiiiii</strong><br>
                         🏆 Bayern München Legend<br>
                         ⚽ Goal Machine<br>
                         🇩🇪 Germany Captain<br>
@@ -419,29 +503,29 @@
         let currentTransformation = 0;
 
         // Button event listeners
-        document.getElementById('playButton').addEventListener('click', function() {
+        document.getElementById('playButton').addEventListener('click', function () {
             const playerContainer = document.getElementById('playerContainer');
             playerContainer.classList.add('animated');
-            
+
             // Create celebration effect
             createCelebrationEffect();
-            
+
             setTimeout(() => {
                 playerContainer.classList.remove('animated');
             }, 1000);
         });
 
-        document.getElementById('changeButton').addEventListener('click', function() {
+        document.getElementById('changeButton').addEventListener('click', function () {
             currentTransformation = (currentTransformation + 1) % transformations.length;
             const transformation = transformations[currentTransformation];
-            
+
             const playerImage = document.getElementById('playerImage');
             const playerNumber = playerImage.querySelector('.player-number');
-            
+
             // Smooth transition
             playerImage.style.opacity = '0';
             playerImage.style.transform = 'scale(0.8)';
-            
+
             setTimeout(() => {
                 playerNumber.textContent = transformation.number;
                 playerImage.innerHTML = `
@@ -457,7 +541,7 @@
         // Celebration effect
         function createCelebrationEffect() {
             const colors = ['#ffd700', '#ff6b6b', '#74b9ff', '#00b894', '#fd79a8'];
-            
+
             for (let i = 0; i < 30; i++) {
                 setTimeout(() => {
                     const confetti = document.createElement('div');
@@ -471,9 +555,9 @@
                     confetti.style.pointerEvents = 'none';
                     confetti.style.zIndex = '1000';
                     confetti.style.animation = 'fall 3s ease-in forwards';
-                    
+
                     document.body.appendChild(confetti);
-                    
+
                     setTimeout(() => {
                         confetti.remove();
                     }, 3000);
@@ -494,7 +578,7 @@
         document.head.appendChild(style);
 
         // Add click interaction to player
-        document.getElementById('playerContainer').addEventListener('click', function() {
+        document.getElementById('playerContainer').addEventListener('click', function () {
             this.style.transform = 'scale(0.95)';
             setTimeout(() => {
                 this.style.transform = 'scale(1.05)';
@@ -505,4 +589,5 @@
         });
     </script>
 </body>
+
 </html>
